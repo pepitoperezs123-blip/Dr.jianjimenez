@@ -327,9 +327,55 @@ footer{background:var(--ds);padding:36px 5%;display:flex;align-items:center;just
 .foot-right a:hover{text-decoration:underline}
 
 /* Floating WA */
-.float-wa{position:fixed;bottom:26px;right:26px;z-index:999;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.4);text-decoration:none;transition:transform .2s}
-.float-wa:hover{transform:scale(1.1)}
+.float-wa{position:fixed;bottom:26px;right:26px;z-index:999;width:52px;height:52px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.4);text-decoration:none;transition:transform .2s;animation:wa-pulse 2s ease-in-out infinite}
+.float-wa:hover{transform:scale(1.1);animation:none}
 .float-wa svg{width:27px;height:27px;fill:#fff}
+
+/* ANIMATIONS */
+@keyframes wa-pulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.4)}50%{box-shadow:0 6px 36px rgba(37,211,102,.7),0 0 0 8px rgba(37,211,102,.15)}}
+@keyframes spin-slow{from{transform:translate(-50%,-50%) rotate(0deg)}to{transform:translate(-50%,-50%) rotate(360deg)}}
+@keyframes spin-reverse{from{transform:translate(-50%,-50%) rotate(360deg)}to{transform:translate(-50%,-50%) rotate(0deg)}}
+@keyframes float-badge{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes fade-up{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+@keyframes hero-in{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes hero-right-in{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+@keyframes gradient-shift{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+
+.ring-1{animation:spin-slow 30s linear infinite}
+.ring-2{animation:spin-reverse 45s linear infinite}
+.tooth-badge{animation:float-badge 3.5s ease-in-out infinite}
+.tooth-badge:nth-child(3){animation-delay:.8s}
+
+.hero-left{animation:hero-in .9s ease-out both}
+.hero-right{animation:hero-right-in 1s ease-out .3s both}
+.hero-kicker{animation:fade-up .7s ease-out .2s both}
+.hero-tag{animation:fade-up .7s ease-out .35s both}
+.hero-h1{animation:fade-up .7s ease-out .5s both}
+.hero-p{animation:fade-up .7s ease-out .65s both}
+.hero-actions{animation:fade-up .7s ease-out .8s both}
+.hero-creds{animation:fade-up .7s ease-out .95s both}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease-out,transform .7s ease-out}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease-out,transform .7s ease-out}
+.reveal-left.visible{opacity:1;transform:translateX(0)}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease-out,transform .7s ease-out}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
+.svc{transition:background .25s,transform .2s,box-shadow .2s}
+.svc:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(23,32,50,.08)}
+
+/* Nav scroll effect */
+nav{transition:background .3s,box-shadow .3s}
+nav.scrolled{background:rgba(23,32,50,1);box-shadow:0 4px 20px rgba(0,0,0,.3)}
+
+/* Gradient hero accent */
+.hero-h1 em{background:linear-gradient(135deg,#3BBFA6,#5BD5C0,#3BBFA6);background-size:200% 200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:gradient-shift 4s ease infinite}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:0s!important;transition-duration:0s!important}
+  .reveal,.reveal-left,.reveal-right{opacity:1;transform:none}
+}
 
 /* RESPONSIVE */
 @media(max-width:1024px){
@@ -446,10 +492,10 @@ footer{background:var(--ds);padding:36px 5%;display:flex;align-items:center;just
   <div class="section-inner">
     <div class="about-grid">
       <div class="about-text">
-        <div class="eyebrow">El doctor</div>
-        <h2 class="serif">Más que un plan, es un <em>compromiso</em> con tu salud bucal</h2>
-        <p class="lead">Soy el Dr. Juan Jiménez, odontólogo egresado de la Universidad de Antioquia. Mi especialidad es la estética dental natural: crear sonrisas que se sienten auténticas, armoniosas y que acompañan a mis pacientes en cada etapa de su vida.</p>
-        <div class="about-qualities">
+        <div class="eyebrow reveal">El doctor</div>
+        <h2 class="serif reveal">Más que un plan, es un <em>compromiso</em> con tu salud bucal</h2>
+        <p class="lead reveal">Soy el Dr. Juan Jiménez, odontólogo egresado de la Universidad de Antioquia. Mi especialidad es la estética dental natural: crear sonrisas que se sienten auténticas, armoniosas y que acompañan a mis pacientes en cada etapa de su vida.</p>
+        <div class="about-qualities reveal">
           <div class="quality">
             <div class="q-dot"><svg viewBox="0 0 17 17" fill="none"><path d="M8.5 1.5C5.5 1.5 3 4 3 7c0 2 .7 3.7 1.7 5.5.7 1.4 1.2 3.2 1.5 4.4.1.5.4.9.7 1 .3.1.7 0 .9-.7l.7-2.9.7 2.9c.2.7.6.8.9.7.3-.1.6-.5.7-1 .3-1.2.8-3 1.5-4.4C12.3 10.7 13 9 13 7c0-3-2.5-5.5-4.5-5.5z" fill="#3BBFA6"/></svg></div>
             <div class="q-body"><h4>Especialista en estética dental</h4><p>Diseño sonrisas que respetan la armonía facial de cada paciente. Sin resultados exagerados, sin artificios: solo la mejor versión natural de tu sonrisa.</p></div>
@@ -465,7 +511,7 @@ footer{background:var(--ds);padding:36px 5%;display:flex;align-items:center;just
         </div>
         <a class="btn-mint" href="https://wa.me/573017355659?text=Hola+Dr.+Juan%2C+quiero+agendar+una+valoración" target="_blank" rel="noopener" style="display:inline-flex">Agendar valoración inicial</a>
       </div>
-      <div style="position:relative">
+      <div style="position:relative" class="reveal-right">
         <div class="about-frame">
           <svg class="about-tooth-art" viewBox="0 0 100 120" fill="none">
             <path d="M50 8C36 8 24 20 24 36c0 12 4 22 8 33 3 8 6 18 8 26 1 4 2.5 6 5 7s5 0 6.5-4l3.5-15 3.5 15c1.5 4 4 5 6.5 4s4-3 5-7c2-8 5-18 8-26 4-11 8-21 8-33 0-16-12-28-26-28z" fill="#3BBFA6" opacity=".9"/>
@@ -490,12 +536,12 @@ footer{background:var(--ds);padding:36px 5%;display:flex;align-items:center;just
   <div class="section-inner">
     <div class="services-header">
       <div>
-        <div class="eyebrow">Tratamientos</div>
-        <h2 class="serif">Todo para tu <em>salud oral</em></h2>
+        <div class="eyebrow reveal">Tratamientos</div>
+        <h2 class="serif reveal">Todo para tu <em>salud oral</em></h2>
       </div>
       <div class="services-note">Ofrezco una gama completa de tratamientos odontológicos. Cada caso se analiza de forma personalizada, con énfasis en resultados naturales y duraderos.</div>
     </div>
-    <div class="svc-grid">
+    <div class="svc-grid reveal">
       <div class="svc"><div class="svc-line"></div><h3>Diseño de Sonrisa</h3><p>Análisis facial completo para una sonrisa armónica y funcional. Resultados planificados y predecibles desde el primer día.</p></div>
       <div class="svc"><div class="svc-line"></div><h3>Carillas de Porcelana</h3><p>Laminados ultrafinos que corrigen forma, color y alineación con un resultado estético de alto nivel y aspecto natural.</p></div>
       <div class="svc"><div class="svc-line"></div><h3>Blanqueamiento Dental</h3><p>Procedimientos seguros y controlados para recuperar la blancura natural de tus dientes con resultados duraderos.</p></div>
@@ -509,12 +555,12 @@ footer{background:var(--ds);padding:36px 5%;display:flex;align-items:center;just
 <!-- PLANES -->
 <section id="planes" class="section">
   <div class="section-inner">
-    <div class="eyebrow" style="color:rgba(255,255,255,.45)">Membresía odontológica</div>
-    <h2 class="serif">Planes de membresía<br><em>odontológica</em></h2>
+    <div class="eyebrow reveal" style="color:rgba(255,255,255,.45)">Membresía odontológica</div>
+    <h2 class="serif reveal">Planes de membresía<br><em>odontológica</em></h2>
     <p class="lead">Prevención · Bienestar · Sonrisas saludables</p>
     <p class="plans-sub">Tres planes, una misma meta: tu mejor sonrisa.</p>
 
-    <div class="plans-grid">
+    <div class="plans-grid reveal">
       <!-- KIDS -->
       <div class="plan kids">
         <div class="plan-header-band kids-band">
@@ -620,10 +666,10 @@ footer{background:var(--ds);padding:36px 5%;display:flex;align-items:center;just
   <div class="section-inner">
     <div class="location-grid">
       <div>
-        <div class="eyebrow">Dónde encontrarnos</div>
-        <h2 class="serif">Estamos en <em>Laureles</em>,<br>Medellín</h2>
+        <div class="eyebrow reveal">Dónde encontrarnos</div>
+        <h2 class="serif reveal">Estamos en <em>Laureles</em>,<br>Medellín</h2>
         <p class="lead">Consultorio ubicado en el corazón de Laureles. Fácil acceso en transporte público y privado.</p>
-        <div class="info-list">
+        <div class="info-list reveal">
           <div class="info-row">
             <div class="info-icon-box"><svg viewBox="0 0 20 20" fill="none"><path d="M10 2C6.7 2 4 4.7 4 8c0 5 6 10 6 10s6-5 6-10c0-3.3-2.7-6-6-6z" stroke="#3BBFA6" stroke-width="1.5"/><circle cx="10" cy="8" r="2" fill="#3BBFA6"/></svg></div>
             <div class="info-body"><h4>Dirección</h4><p>Calle 32D #76-111, Local 101<br>Edificio Avellano · Laureles, Medellín</p></div>
@@ -642,7 +688,7 @@ footer{background:var(--ds);padding:36px 5%;display:flex;align-items:center;just
           </div>
         </div>
       </div>
-      <div class="map-container">
+      <div class="map-container reveal-right">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997!2d-75.605!3d6.2442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46828ecf1e2a1d%3A0x1a37aa0e9fac5f20!2sCl.+32d+%2376-111%2C+Laureles%2C+Medell%C3%ADn%2C+Antioquia!5e0!3m2!1ses-419!2sco!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
     </div>
@@ -678,3 +724,31 @@ footer{background:var(--ds);padding:36px 5%;display:flex;align-items:center;just
 <a class="float-wa" href="https://wa.me/573017355659?text=Hola+Dr.+Juan%2C+quiero+agendar+una+cita" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24"><use href="#wa-icon"/></svg>
 </a>
+
+<script>
+// Scroll reveal
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>observer.observe(el));
+
+// Nav scroll effect
+const nav=document.querySelector('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+
+// Counter animation for credential values
+function animateCounters(){
+  document.querySelectorAll('.cred-val').forEach(el=>{
+    const text=el.textContent;
+    if(/^\d+/.test(text)){
+      const num=parseInt(text);const suffix=text.replace(/^\d+/,'');
+      let start=0;const dur=1200;const t0=performance.now();
+      (function step(now){
+        const p=Math.min((now-t0)/dur,1);
+        const ease=1-Math.pow(1-p,3);
+        el.textContent=Math.round(start+ease*(num-start))+suffix;
+        if(p<1)requestAnimationFrame(step);
+      })(t0);
+    }
+  });
+}
+animateCounters();
+</script>

@@ -395,13 +395,41 @@ nav.scrolled{background:rgba(23,32,50,1);box-shadow:0 4px 20px rgba(0,0,0,.3)}
   .location-grid{grid-template-columns:1fr;gap:36px}
   .svc-grid{grid-template-columns:1fr 1fr}
   nav .nav-links{display:none}
+  nav .nav-wa span{display:none}
+  .hamburger{display:flex}
+  .mobile-menu{display:flex}
 }
 @media(max-width:560px){
   .svc-grid{grid-template-columns:1fr;border-radius:12px;overflow:hidden;gap:2px}
   .svc:nth-child(1),.svc:nth-child(3),.svc:nth-child(4),.svc:nth-child(6){border-radius:0}
   footer{flex-direction:column;text-align:center}
   .foot-right{text-align:center}
+  section{padding:48px 5%}
+  .eyebrow{font-size:.65rem}
+  h2{font-size:1.6rem}
+  .hero-left h1{font-size:2rem}
+  .hero-left p{font-size:.9rem}
+  .plan{padding:28px 20px}
+  .plan h3{font-size:1.1rem}
+  .plan .price{font-size:1.3rem}
+  #contacto{padding:48px 5%}
+  #contacto h2{font-size:1.5rem}
+  #contacto p{font-size:.95rem}
+  .wa-cta{padding:14px 28px;font-size:1rem}
+  .cta-tooth{width:50px;height:60px;opacity:.04}
 }
+/* Hamburger button */
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1001}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:transform .3s,opacity .3s}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+/* Mobile slide menu */
+.mobile-menu{display:none;position:fixed;top:68px;left:0;width:100%;background:var(--ds);flex-direction:column;padding:24px 5% 32px;gap:0;transform:translateY(-110%);transition:transform .35s cubic-bezier(.4,0,.2,1);z-index:899;border-bottom:2px solid var(--mint)}
+.mobile-menu.open{transform:translateY(0)}
+.mobile-menu a{font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:500;color:rgba(255,255,255,.8);text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);transition:color .2s}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a:hover{color:var(--mint)}
 </style>
 
 <!-- SVG WA icon shorthand -->
@@ -425,9 +453,19 @@ nav.scrolled{background:rgba(23,32,50,1);box-shadow:0 4px 20px rgba(0,0,0,.3)}
   </ul>
   <a class="nav-wa" href="https://wa.me/573017355659?text=Hola+Dr.+Juan%2C+quiero+agendar+una+cita" target="_blank" rel="noopener">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><use href="#wa-icon"/></svg>
-    Agendar cita
+    <span>Agendar cita</span>
   </a>
+  <button class="hamburger" aria-label="Menú" onclick="this.classList.toggle('open');document.querySelector('.mobile-menu').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu">
+  <a href="#sobre-mi" onclick="closeMobile()">El doctor</a>
+  <a href="#servicios" onclick="closeMobile()">Servicios</a>
+  <a href="#planes" onclick="closeMobile()">Planes</a>
+  <a href="#ubicacion" onclick="closeMobile()">Ubicación</a>
+  <a href="https://wa.me/573017355659?text=Hola+Dr.+Juan%2C+quiero+agendar+una+cita" target="_blank" rel="noopener" onclick="closeMobile()">📱 Agendar cita</a>
+</div>
 
 <!-- HERO -->
 <section id="inicio">
@@ -731,6 +769,7 @@ nav.scrolled{background:rgba(23,32,50,1);box-shadow:0 4px 20px rgba(0,0,0,.3)}
 </a>
 
 <script>
+function closeMobile(){document.querySelector('.hamburger').classList.remove('open');document.querySelector('.mobile-menu').classList.remove('open')}
 // Scroll reveal
 const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target)}})},{threshold:.15,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el=>observer.observe(el));

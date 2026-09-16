@@ -432,6 +432,22 @@ nav.scrolled{background:rgba(23,32,50,1);box-shadow:0 4px 20px rgba(0,0,0,.3)}
 .mobile-menu a{font-family:'DM Sans',sans-serif;font-size:1.05rem;font-weight:500;color:rgba(255,255,255,.8);text-decoration:none;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06);transition:color .2s}
 .mobile-menu a:last-child{border-bottom:none}
 .mobile-menu a:hover{color:var(--mint)}
+/* Testimonials */
+.testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.testimonial{background:var(--white);border-radius:16px;padding:32px 28px;border:1px solid var(--ink-35);transition:transform .25s,box-shadow .25s}
+.testimonial:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.testi-stars{color:var(--gold);font-size:1rem;margin-bottom:16px;letter-spacing:2px}
+.testi-text{font-size:.92rem;line-height:1.7;color:var(--ink-70);margin-bottom:24px;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:12px}
+.testi-avatar{width:40px;height:40px;border-radius:50%;background:var(--mint);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.8rem;flex-shrink:0}
+.testi-author strong{display:block;font-size:.85rem;color:var(--ink)}
+.testi-author span{font-size:.72rem;color:var(--ink-70)}
+@media(max-width:860px){.testimonials-grid{grid-template-columns:1fr;max-width:500px;margin-left:auto;margin-right:auto}}
+/* Plan card glow on hover */
+.plan{background:rgba(255,255,255,.02)}
+.plan:hover{box-shadow:0 8px 32px rgba(59,191,166,.1)}
+.plan.featured{box-shadow:0 8px 40px rgba(59,191,166,.15)}
+.plan.featured:hover{box-shadow:0 12px 48px rgba(59,191,166,.22)}
 </style>
 
 <!-- SVG WA icon shorthand -->
@@ -724,6 +740,40 @@ nav.scrolled{background:rgba(23,32,50,1);box-shadow:0 4px 20px rgba(0,0,0,.3)}
       </div>
       <div class="map-container reveal-right">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d997!2d-75.605!3d6.2442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e46828ecf1e2a1d%3A0x1a37aa0e9fac5f20!2sCl.+32d+%2376-111%2C+Laureles%2C+Medell%C3%ADn%2C+Antioquia!5e0!3m2!1ses-419!2sco!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="section" style="background:var(--bone-2)">
+  <div class="section-inner">
+    <div class="eyebrow reveal" style="text-align:center">Lo que dicen nuestros pacientes</div>
+    <h2 class="serif reveal" style="text-align:center">Sonrisas que hablan<br>por <em>nosotros</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Llevé a mis hijos por primera vez y la experiencia fue increíble. El Dr. Juan tiene una paciencia enorme con los niños, les explicó todo y salieron felices. 100% recomendado para familias."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">CM</div>
+          <div><strong>Carolina M.</strong><span>Paciente · Plan Kids</span></div>
+        </div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Me hice un blanqueamiento y unas carillas con el Dr. Jiménez. El resultado se ve completamente natural, nadie nota que me hice algo. Solo me dicen que me veo mejor. Eso era exactamente lo que quería."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">AF</div>
+          <div><strong>Andrés F.</strong><span>Paciente · Estética dental</span></div>
+        </div>
+      </div>
+      <div class="testimonial reveal">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Mi mamá tiene 72 años y necesitaba atención domiciliaria. El Dr. Juan fue a casa, la trató con mucho cariño y le resolvió todo en dos visitas. El plan Senior nos dio mucha tranquilidad."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">LP</div>
+          <div><strong>Laura P.</strong><span>Familiar · Plan Senior</span></div>
+        </div>
       </div>
     </div>
   </div>

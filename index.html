@@ -506,21 +506,38 @@ nav.scrolled{background:rgba(23,32,50,1);box-shadow:0 4px 20px rgba(0,0,0,.3)}
   <div class="hero-right">
     <div class="tooth-wrap">
       <div class="ring ring-1"></div><div class="ring ring-2"></div>
-      <svg class="tooth-svg" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg">
+      <svg class="tooth-svg" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg">
         <defs>
-          <linearGradient id="tg" x1="50%" y1="0%" x2="50%" y2="100%">
-            <stop offset="0%" stop-color="rgba(59,191,166,.25)"/>
-            <stop offset="60%" stop-color="rgba(59,191,166,.08)"/>
-            <stop offset="100%" stop-color="rgba(59,191,166,.02)"/>
+          <linearGradient id="tg" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="rgba(59,191,166,.35)"/>
+            <stop offset="100%" stop-color="rgba(59,191,166,.08)"/>
           </linearGradient>
-          <filter id="tooth-glow"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
         </defs>
-        <!-- Glow behind -->
-        <path d="M186.1 52.1C169.3 39.1 148.7 32 128 32 57.3 32 0 89.3 0 160c0 46.2 16 88.4 32.8 124.7c7 15.1 14.2 29.4 19.2 43.1c7.7 21.2 11.1 39.1 4.6 71.2c-2 9.7 5.9 19 15.7 19h48.8c7.2 0 13.5-4.9 15.2-11.9c5.6-23 17.4-64.2 26.2-88.7c3-8.4 12.8-12.5 21.3-9.3c3.3 1.3 6.7 1.9 10.2 1.9s6.9-.6 10.2-1.9c8.5-3.2 18.3 .9 21.3 9.3c8.8 24.5 20.6 65.7 26.2 88.7c1.7 7.1 8 11.9 15.2 11.9h48.8c9.8 0 17.7-9.3 15.7-19c-6.5-32.1-3.1-50 4.6-71.2c5-13.7 12.2-28 19.2-43.1C371.4 248.4 448 206.2 448 160 448 89.3 390.7 32 320 32c-20.7 0-41.3 7.1-58.1 20.1-11.4 8.8-28.5 8.8-39.8 0l-36 0z" fill="url(#tg)" stroke="rgba(59,191,166,.35)" stroke-width="4" filter="url(#tooth-glow)"/>
+        <!-- Smile arc — elegant curve representing a dental smile -->
+        <path d="M40 90 C40 90, 70 140, 120 140 C170 140, 200 90, 200 90" stroke="url(#tg)" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- Teeth silhouettes along the smile — subtle, uniform, professional -->
+        <rect x="62" y="92" width="16" height="22" rx="4" fill="rgba(255,255,255,.06)" stroke="rgba(59,191,166,.15)" stroke-width="1"/>
+        <rect x="82" y="88" width="16" height="26" rx="4" fill="rgba(255,255,255,.07)" stroke="rgba(59,191,166,.18)" stroke-width="1"/>
+        <rect x="102" y="86" width="16" height="28" rx="4" fill="rgba(255,255,255,.08)" stroke="rgba(59,191,166,.22)" stroke-width="1"/>
+        <rect x="122" y="86" width="16" height="28" rx="4" fill="rgba(255,255,255,.08)" stroke="rgba(59,191,166,.22)" stroke-width="1"/>
+        <rect x="142" y="88" width="16" height="26" rx="4" fill="rgba(255,255,255,.07)" stroke="rgba(59,191,166,.18)" stroke-width="1"/>
+        <rect x="162" y="92" width="16" height="22" rx="4" fill="rgba(255,255,255,.06)" stroke="rgba(59,191,166,.15)" stroke-width="1"/>
+        <!-- Sparkle / brillo dental -->
+        <g transform="translate(148, 78)">
+          <line x1="0" y1="-8" x2="0" y2="8" stroke="rgba(255,255,255,.3)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="-8" y1="0" x2="8" y2="0" stroke="rgba(255,255,255,.3)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="-5" y1="-5" x2="5" y2="5" stroke="rgba(255,255,255,.15)" stroke-width="1" stroke-linecap="round"/>
+          <line x1="5" y1="-5" x2="-5" y2="5" stroke="rgba(255,255,255,.15)" stroke-width="1" stroke-linecap="round"/>
+        </g>
+        <!-- Second smaller sparkle -->
+        <g transform="translate(76, 84) scale(.6)">
+          <line x1="0" y1="-8" x2="0" y2="8" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="-8" y1="0" x2="8" y2="0" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round"/>
+        </g>
       </svg>
       <div class="tooth-badge">
         <div style="width:30px;height:30px;border-radius:50%;background:#E6F7F4;display:flex;align-items:center;justify-content:center;flex-shrink:0">
-          <svg width="17" height="17" viewBox="0 0 448 512" fill="none"><path d="M186.1 52.1C169.3 39.1 148.7 32 128 32 57.3 32 0 89.3 0 160c0 46.2 16 88.4 32.8 124.7c7 15.1 14.2 29.4 19.2 43.1c7.7 21.2 11.1 39.1 4.6 71.2c-2 9.7 5.9 19 15.7 19h48.8c7.2 0 13.5-4.9 15.2-11.9c5.6-23 17.4-64.2 26.2-88.7c3-8.4 12.8-12.5 21.3-9.3c3.3 1.3 6.7 1.9 10.2 1.9s6.9-.6 10.2-1.9c8.5-3.2 18.3 .9 21.3 9.3c8.8 24.5 20.6 65.7 26.2 88.7c1.7 7.1 8 11.9 15.2 11.9h48.8c9.8 0 17.7-9.3 15.7-19c-6.5-32.1-3.1-50 4.6-71.2c5-13.7 12.2-28 19.2-43.1C371.4 248.4 448 206.2 448 160 448 89.3 390.7 32 320 32c-20.7 0-41.3 7.1-58.1 20.1-11.4 8.8-28.5 8.8-39.8 0z" fill="#3BBFA6"/></svg>
+<svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M7 13c1.5 3 3 4 5 4s3.5-1 5-4" stroke="#3BBFA6" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="5" x2="16" y2="9" stroke="#3BBFA6" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="7" x2="18" y2="7" stroke="#3BBFA6" stroke-width="1.5" stroke-linecap="round"/></svg>
         </div>
         <div class="badge-text"><strong>Estética natural</strong><span>Resultados armónicos</span></div>
       </div>
@@ -544,7 +561,7 @@ nav.scrolled{background:rgba(23,32,50,1);box-shadow:0 4px 20px rgba(0,0,0,.3)}
         <p class="lead reveal">Soy el Dr. Juan Jiménez, odontólogo egresado de la Universidad de Antioquia. Mi especialidad es la estética dental natural: crear sonrisas que se sienten auténticas, armoniosas y que acompañan a mis pacientes en cada etapa de su vida.</p>
         <div class="about-qualities reveal">
           <div class="quality">
-            <div class="q-dot"><svg viewBox="0 0 17 17" fill="none"><path d="M8.5 1.5C5.5 1.5 3 4 3 7c0 2 .7 3.7 1.7 5.5.7 1.4 1.2 3.2 1.5 4.4.1.5.4.9.7 1 .3.1.7 0 .9-.7l.7-2.9.7 2.9c.2.7.6.8.9.7.3-.1.6-.5.7-1 .3-1.2.8-3 1.5-4.4C12.3 10.7 13 9 13 7c0-3-2.5-5.5-4.5-5.5z" fill="#3BBFA6"/></svg></div>
+            <div class="q-dot"><svg viewBox="0 0 17 17" fill="none"><circle cx="8.5" cy="8.5" r="7" stroke="#3BBFA6" stroke-width="1.2" fill="none"/><path d="M5.5 9.5c1 1.5 2 2 3 2s2-.5 3-2" stroke="#3BBFA6" stroke-width="1.2" stroke-linecap="round" fill="none"/><circle cx="6.5" cy="7" r=".8" fill="#3BBFA6"/><circle cx="10.5" cy="7" r=".8" fill="#3BBFA6"/></svg></div>
             <div class="q-body"><h4>Especialista en estética dental</h4><p>Diseño sonrisas que respetan la armonía facial de cada paciente. Sin resultados exagerados, sin artificios: solo la mejor versión natural de tu sonrisa.</p></div>
           </div>
           <div class="quality">
@@ -560,9 +577,7 @@ nav.scrolled{background:rgba(23,32,50,1);box-shadow:0 4px 20px rgba(0,0,0,.3)}
       </div>
       <div style="position:relative" class="reveal-right">
         <div class="about-frame">
-          <svg class="about-tooth-art" viewBox="0 0 448 512" fill="none">
-            <path d="M186.1 52.1C169.3 39.1 148.7 32 128 32 57.3 32 0 89.3 0 160c0 46.2 16 88.4 32.8 124.7c7 15.1 14.2 29.4 19.2 43.1c7.7 21.2 11.1 39.1 4.6 71.2c-2 9.7 5.9 19 15.7 19h48.8c7.2 0 13.5-4.9 15.2-11.9c5.6-23 17.4-64.2 26.2-88.7c3-8.4 12.8-12.5 21.3-9.3c3.3 1.3 6.7 1.9 10.2 1.9s6.9-.6 10.2-1.9c8.5-3.2 18.3 .9 21.3 9.3c8.8 24.5 20.6 65.7 26.2 88.7c1.7 7.1 8 11.9 15.2 11.9h48.8c9.8 0 17.7-9.3 15.7-19c-6.5-32.1-3.1-50 4.6-71.2c5-13.7 12.2-28 19.2-43.1C371.4 248.4 448 206.2 448 160 448 89.3 390.7 32 320 32c-20.7 0-41.3 7.1-58.1 20.1-11.4 8.8-28.5 8.8-39.8 0z" fill="#3BBFA6" opacity=".9"/>
-          </svg>
+          <img src="logo.png" alt="Dr. Juan Jiménez" style="width:120px;height:120px;object-fit:cover;border-radius:50%;opacity:.9">
           <div class="about-name-block">
             <h3>Dr. Juan Jiménez</h3>
             <p>Odontólogo · UdeA · Medellín</p>
@@ -743,8 +758,8 @@ nav.scrolled{background:rgba(23,32,50,1);box-shadow:0 4px 20px rgba(0,0,0,.3)}
 
 <!-- CTA -->
 <section id="contacto">
-  <svg class="cta-tooth cta-tooth-l" viewBox="0 0 448 512" fill="none"><path d="M186.1 52.1C169.3 39.1 148.7 32 128 32 57.3 32 0 89.3 0 160c0 46.2 16 88.4 32.8 124.7c7 15.1 14.2 29.4 19.2 43.1c7.7 21.2 11.1 39.1 4.6 71.2c-2 9.7 5.9 19 15.7 19h48.8c7.2 0 13.5-4.9 15.2-11.9c5.6-23 17.4-64.2 26.2-88.7c3-8.4 12.8-12.5 21.3-9.3c3.3 1.3 6.7 1.9 10.2 1.9s6.9-.6 10.2-1.9c8.5-3.2 18.3 .9 21.3 9.3c8.8 24.5 20.6 65.7 26.2 88.7c1.7 7.1 8 11.9 15.2 11.9h48.8c9.8 0 17.7-9.3 15.7-19c-6.5-32.1-3.1-50 4.6-71.2c5-13.7 12.2-28 19.2-43.1C371.4 248.4 448 206.2 448 160 448 89.3 390.7 32 320 32c-20.7 0-41.3 7.1-58.1 20.1-11.4 8.8-28.5 8.8-39.8 0z" fill="#fff"/></svg>
-  <svg class="cta-tooth cta-tooth-r" viewBox="0 0 448 512" fill="none"><path d="M186.1 52.1C169.3 39.1 148.7 32 128 32 57.3 32 0 89.3 0 160c0 46.2 16 88.4 32.8 124.7c7 15.1 14.2 29.4 19.2 43.1c7.7 21.2 11.1 39.1 4.6 71.2c-2 9.7 5.9 19 15.7 19h48.8c7.2 0 13.5-4.9 15.2-11.9c5.6-23 17.4-64.2 26.2-88.7c3-8.4 12.8-12.5 21.3-9.3c3.3 1.3 6.7 1.9 10.2 1.9s6.9-.6 10.2-1.9c8.5-3.2 18.3 .9 21.3 9.3c8.8 24.5 20.6 65.7 26.2 88.7c1.7 7.1 8 11.9 15.2 11.9h48.8c9.8 0 17.7-9.3 15.7-19c-6.5-32.1-3.1-50 4.6-71.2c5-13.7 12.2-28 19.2-43.1C371.4 248.4 448 206.2 448 160 448 89.3 390.7 32 320 32c-20.7 0-41.3 7.1-58.1 20.1-11.4 8.8-28.5 8.8-39.8 0z" fill="#fff"/></svg>
+  <svg class="cta-tooth cta-tooth-l" viewBox="0 0 120 60" fill="none"><path d="M10 30 C10 30, 30 55, 60 55 C90 55, 110 30, 110 30" stroke="rgba(255,255,255,.15)" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="24" y="30" width="10" height="14" rx="3" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="38" y="28" width="10" height="16" rx="3" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="52" y="26" width="10" height="18" rx="3" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="66" y="26" width="10" height="18" rx="3" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="80" y="28" width="10" height="16" rx="3" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/></svg>
+  <svg class="cta-tooth cta-tooth-r" viewBox="0 0 120 60" fill="none"><path d="M10 30 C10 30, 30 55, 60 55 C90 55, 110 30, 110 30" stroke="rgba(255,255,255,.15)" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="24" y="30" width="10" height="14" rx="3" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="38" y="28" width="10" height="16" rx="3" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="52" y="26" width="10" height="18" rx="3" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="66" y="26" width="10" height="18" rx="3" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="80" y="28" width="10" height="16" rx="3" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/></svg>
   <div class="eyebrow reveal">Dar el primer paso</div>
   <h2 class="cta-h">¡Agenda tu plan hoy!<br>Tu sonrisa, nuestra especialidad</h2>
   <p class="cta-sub">Contáctanos por WhatsApp y te asesoramos sobre el plan ideal para ti o para toda tu familia. Sin compromisos, con toda la información.</p>

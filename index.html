@@ -137,6 +137,7 @@ nav{
   top:50%;left:50%;transform:translate(-50%,-50%);
 }
 .tooth-svg{width:100%;height:100%;filter:drop-shadow(0 20px 50px rgba(59,191,166,.18))}
+.hero-logo-img{width:160px;height:160px;object-fit:cover;border-radius:50%;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;filter:drop-shadow(0 8px 32px rgba(59,191,166,.25));border:3px solid rgba(59,191,166,.2)}
 .ring{position:absolute;border-radius:50%;border:1px solid rgba(59,191,166,.1);top:50%;left:50%;transform:translate(-50%,-50%)}
 .ring-1{width:320px;height:320px}
 .ring-2{width:460px;height:460px;border-color:rgba(59,191,166,.05)}
@@ -506,35 +507,7 @@ nav.scrolled{background:rgba(23,32,50,1);box-shadow:0 4px 20px rgba(0,0,0,.3)}
   <div class="hero-right">
     <div class="tooth-wrap">
       <div class="ring ring-1"></div><div class="ring ring-2"></div>
-      <svg class="tooth-svg" viewBox="0 0 240 200" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="tg" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="rgba(59,191,166,.35)"/>
-            <stop offset="100%" stop-color="rgba(59,191,166,.08)"/>
-          </linearGradient>
-        </defs>
-        <!-- Smile arc — elegant curve representing a dental smile -->
-        <path d="M40 90 C40 90, 70 140, 120 140 C170 140, 200 90, 200 90" stroke="url(#tg)" stroke-width="3" fill="none" stroke-linecap="round"/>
-        <!-- Teeth silhouettes along the smile — subtle, uniform, professional -->
-        <rect x="62" y="92" width="16" height="22" rx="4" fill="rgba(255,255,255,.06)" stroke="rgba(59,191,166,.15)" stroke-width="1"/>
-        <rect x="82" y="88" width="16" height="26" rx="4" fill="rgba(255,255,255,.07)" stroke="rgba(59,191,166,.18)" stroke-width="1"/>
-        <rect x="102" y="86" width="16" height="28" rx="4" fill="rgba(255,255,255,.08)" stroke="rgba(59,191,166,.22)" stroke-width="1"/>
-        <rect x="122" y="86" width="16" height="28" rx="4" fill="rgba(255,255,255,.08)" stroke="rgba(59,191,166,.22)" stroke-width="1"/>
-        <rect x="142" y="88" width="16" height="26" rx="4" fill="rgba(255,255,255,.07)" stroke="rgba(59,191,166,.18)" stroke-width="1"/>
-        <rect x="162" y="92" width="16" height="22" rx="4" fill="rgba(255,255,255,.06)" stroke="rgba(59,191,166,.15)" stroke-width="1"/>
-        <!-- Sparkle / brillo dental -->
-        <g transform="translate(148, 78)">
-          <line x1="0" y1="-8" x2="0" y2="8" stroke="rgba(255,255,255,.3)" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="-8" y1="0" x2="8" y2="0" stroke="rgba(255,255,255,.3)" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="-5" y1="-5" x2="5" y2="5" stroke="rgba(255,255,255,.15)" stroke-width="1" stroke-linecap="round"/>
-          <line x1="5" y1="-5" x2="-5" y2="5" stroke="rgba(255,255,255,.15)" stroke-width="1" stroke-linecap="round"/>
-        </g>
-        <!-- Second smaller sparkle -->
-        <g transform="translate(76, 84) scale(.6)">
-          <line x1="0" y1="-8" x2="0" y2="8" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round"/>
-          <line x1="-8" y1="0" x2="8" y2="0" stroke="rgba(255,255,255,.2)" stroke-width="1.5" stroke-linecap="round"/>
-        </g>
-      </svg>
+      <img src="logo.png" alt="Dr. Juan Jiménez" class="hero-logo-img">
       <div class="tooth-badge">
         <div style="width:30px;height:30px;border-radius:50%;background:#E6F7F4;display:flex;align-items:center;justify-content:center;flex-shrink:0">
 <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M7 13c1.5 3 3 4 5 4s3.5-1 5-4" stroke="#3BBFA6" stroke-width="2" stroke-linecap="round"/><line x1="16" y1="5" x2="16" y2="9" stroke="#3BBFA6" stroke-width="1.5" stroke-linecap="round"/><line x1="14" y1="7" x2="18" y2="7" stroke="#3BBFA6" stroke-width="1.5" stroke-linecap="round"/></svg>
@@ -758,8 +731,6 @@ nav.scrolled{background:rgba(23,32,50,1);box-shadow:0 4px 20px rgba(0,0,0,.3)}
 
 <!-- CTA -->
 <section id="contacto">
-  <svg class="cta-tooth cta-tooth-l" viewBox="0 0 120 60" fill="none"><path d="M10 30 C10 30, 30 55, 60 55 C90 55, 110 30, 110 30" stroke="rgba(255,255,255,.15)" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="24" y="30" width="10" height="14" rx="3" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="38" y="28" width="10" height="16" rx="3" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="52" y="26" width="10" height="18" rx="3" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="66" y="26" width="10" height="18" rx="3" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="80" y="28" width="10" height="16" rx="3" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/></svg>
-  <svg class="cta-tooth cta-tooth-r" viewBox="0 0 120 60" fill="none"><path d="M10 30 C10 30, 30 55, 60 55 C90 55, 110 30, 110 30" stroke="rgba(255,255,255,.15)" stroke-width="2" fill="none" stroke-linecap="round"/><rect x="24" y="30" width="10" height="14" rx="3" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="38" y="28" width="10" height="16" rx="3" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="52" y="26" width="10" height="18" rx="3" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="66" y="26" width="10" height="18" rx="3" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/><rect x="80" y="28" width="10" height="16" rx="3" fill="rgba(255,255,255,.07)" stroke="rgba(255,255,255,.08)" stroke-width=".5"/></svg>
   <div class="eyebrow reveal">Dar el primer paso</div>
   <h2 class="cta-h">¡Agenda tu plan hoy!<br>Tu sonrisa, nuestra especialidad</h2>
   <p class="cta-sub">Contáctanos por WhatsApp y te asesoramos sobre el plan ideal para ti o para toda tu familia. Sin compromisos, con toda la información.</p>
